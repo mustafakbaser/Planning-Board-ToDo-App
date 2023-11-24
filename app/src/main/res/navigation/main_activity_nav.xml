@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_activity_nav">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/homePageFragment">
 
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="net.mustafabaser.planningboard.ui.fragment.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/homepage_to_record_detail"
+            app:destination="@id/recordDetailFragment"
+            app:popUpTo="@id/homePageFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/homepage_to_create_record"
+            app:destination="@id/recordCreateFragment"
+            app:popUpTo="@id/homePageFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/recordDetailFragment"
+        android:name="net.mustafabaser.planningboard.ui.fragment.RecordDetailFragment"
+        android:label="fragment_record_detail"
+        tools:layout="@layout/fragment_record_detail" >
+        <argument
+            android:name="record"
+            app:argType="net.mustafabaser.planningboard.data.entity.Records" />
+    </fragment>
+    <fragment
+        android:id="@+id/recordCreateFragment"
+        android:name="net.mustafabaser.planningboard.ui.fragment.RecordCreateFragment"
+        android:label="fragment_create_record"
+        tools:layout="@layout/fragment_create_record" >
+        <action
+            android:id="@+id/create_record_to_homepage"
+            app:destination="@id/homePageFragment" />
+    </fragment>
 </navigation>
