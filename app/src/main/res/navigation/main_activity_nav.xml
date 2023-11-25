@@ -34,9 +34,5 @@
         android:id="@+id/recordCreateFragment"
         android:name="net.mustafabaser.planningboard.ui.fragment.RecordCreateFragment"
         android:label="fragment_create_record"
-        tools:layout="@layout/fragment_create_record" >
-        <action
-            android:id="@+id/create_record_to_homepage"
-            app:destination="@id/homePageFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_create_record" />
 </navigation>

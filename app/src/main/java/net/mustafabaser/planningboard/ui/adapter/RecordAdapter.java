@@ -6,12 +6,14 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 
 import net.mustafabaser.planningboard.data.entity.Records;
 import net.mustafabaser.planningboard.databinding.RecordCardDesignBinding;
+import net.mustafabaser.planningboard.ui.fragment.HomePageFragmentDirections;
 import net.mustafabaser.planningboard.ui.viewmodel.HomePageViewModel;
 
 import java.util.List;
@@ -50,15 +52,16 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordCard
         cardBinding.textViewRecordBody.setText(record.getRecord_body());
 
         cardBinding.imageViewDelete.setOnClickListener(v->{
-            try{
                 String substr = record.getRecord_body().substring(0,20);
                 Snackbar.make(v, substr + "... will be deleted.", Snackbar.LENGTH_SHORT)
                         .setAction("CONFIRM", v1->{
                             viewModel.remove(record.getRecord_id());
                         }).show();
-            }catch (ClassCastException e){
-                Log.e("Exception", "Couldn't find substr.");
-            }
+        });
+
+        cardBinding.cardViewLine.setOnClickListener(v -> {
+            HomePageFragmentDirections.HomepageToRecordDetail toRecordDetail = HomePageFragmentDirections.homepageToRecordDetail(record);
+            Navigation.findNavController(v).navigate(toRecordDetail);
         });
     }
 

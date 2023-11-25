@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.room.Room;
 
 import net.mustafabaser.planningboard.data.repo.RecordsDaoRepository;
-import net.mustafabaser.planningboard.room.Database;
+import net.mustafabaser.planningboard.room.DatabaseRecords;
 import net.mustafabaser.planningboard.room.RecordsDao;
 
 import javax.inject.Singleton;
@@ -28,7 +28,7 @@ public class AppModule {
     @Provides
     @Singleton
     public RecordsDao provideRecordsDao(@ApplicationContext Context context){
-        Database db = Room.databaseBuilder(context, Database.class, "records.sqlite")
+        DatabaseRecords db = Room.databaseBuilder(context, DatabaseRecords.class, "records.sqlite")
                 .createFromAsset("records.sqlite").build();
         return db.getRecordsDao();
     }

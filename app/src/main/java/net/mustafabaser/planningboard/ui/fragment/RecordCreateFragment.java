@@ -22,11 +22,10 @@ public class RecordCreateFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentCreateRecordBinding.inflate(inflater, container, false);
 
-        /* To-Do
-
-        Button features will be added.
-        */
-
+        binding.buttonCreate.setOnClickListener(v->{
+            String record_body = binding.editTextRecordBody.getText().toString();
+            viewModel.create(record_body);
+        });
 
         return binding.getRoot();
     }

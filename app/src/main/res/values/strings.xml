@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Planning Board</string>
     <string name="search">Search</string>
+    <string name="type_something">Type something...</string>
+    <string name="update">Update</string>
+    <string name="save">Save</string>
 </resources>

@@ -28,17 +28,12 @@ public class RecordsDaoRepository {
                 .subscribe(new CompletableObserver() {
                     @Override
                     public void onSubscribe(Disposable d) {
-
                     }
-
                     @Override
                     public void onComplete() {
-
                     }
-
                     @Override
                     public void onError(Throwable e) {
-
                     }
                 });
     }
@@ -81,7 +76,6 @@ public class RecordsDaoRepository {
                 .subscribe(new SingleObserver<List<Records>>() {
                     @Override
                     public void onSubscribe(Disposable d) {}
-
                     @Override
                     public void onSuccess(List<Records> records) {
                         recordsList.setValue(records);
@@ -98,7 +92,6 @@ public class RecordsDaoRepository {
                 .subscribe(new CompletableObserver() {
                     @Override
                     public void onSubscribe(Disposable d) {}
-
                     @Override
                     public void onComplete() {}
                     @Override

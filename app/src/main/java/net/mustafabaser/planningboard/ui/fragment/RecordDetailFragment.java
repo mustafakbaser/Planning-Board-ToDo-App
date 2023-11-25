@@ -26,10 +26,12 @@ public class RecordDetailFragment extends Fragment {
         RecordDetailFragmentArgs bundle = RecordDetailFragmentArgs.fromBundle(getArguments());
         Records retrievedRecord = bundle.getRecord();
 
-        /* To-Do
+        binding.editTextRecordBody.setText(retrievedRecord.getRecord_body().toString());
 
-        Edittext and Button features will be added.
-        */
+        binding.buttonUpdate.setOnClickListener(v->{
+            String record_body = binding.editTextRecordBody.getText().toString();
+            viewModel.update(retrievedRecord.getRecord_id(), record_body);
+        });
 
         return binding.getRoot();
     }
