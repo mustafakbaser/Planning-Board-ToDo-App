@@ -4,6 +4,12 @@
 
 This is a To-Do Android application developed using Java with MVVM architecture and several key libraries to enhance functionality and maintainability.
 
+## Screenshots
+
+Explore the visual charm of the app through these captivating screenshots:
+
+<img src="https://github.com/mustafakbaser/Planning-Board-ToDo-App/blob/master/in-app-screenshot.png" alt="In-app screenshot" width="350" height="600" />
+
 ## Architecture - MVVM
 
 The application follows the MVVM (Model-View-ViewModel) architecture, which separates the user interface logic from the business logic. This design pattern promotes a clean and maintainable codebase by organizing components into three main categories:
