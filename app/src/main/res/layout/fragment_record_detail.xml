@@ -47,8 +47,7 @@
             android:id="@+id/editTextRecordBody"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="start"
-            android:hint="@string/type_something"/>
+            android:gravity="start" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

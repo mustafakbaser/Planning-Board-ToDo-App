@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Planning Board</string>
+    <string name="search">Ara</string>
+    <string name="type_something">Yazmaya başla…</string>
+    <string name="update">Güncelle</string>
+    <string name="save">Kaydet</string>
+</resources>

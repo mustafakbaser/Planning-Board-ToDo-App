@@ -29,10 +29,17 @@
         <argument
             android:name="record"
             app:argType="net.mustafabaser.planningboard.data.entity.Records" />
+        <action
+            android:id="@+id/record_detail_back_to_homepage"
+            app:destination="@id/homePageFragment" />
     </fragment>
     <fragment
         android:id="@+id/recordCreateFragment"
         android:name="net.mustafabaser.planningboard.ui.fragment.RecordCreateFragment"
         android:label="fragment_create_record"
-        tools:layout="@layout/fragment_create_record" />
+        tools:layout="@layout/fragment_create_record" >
+        <action
+            android:id="@+id/record_create_back_to_homepage"
+            app:destination="@id/homePageFragment" />
+    </fragment>
 </navigation>

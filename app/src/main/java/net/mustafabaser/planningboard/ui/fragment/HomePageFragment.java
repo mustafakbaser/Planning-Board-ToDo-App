@@ -18,6 +18,9 @@ import net.mustafabaser.planningboard.databinding.FragmentHomePageBinding;
 import net.mustafabaser.planningboard.ui.adapter.RecordAdapter;
 import net.mustafabaser.planningboard.ui.viewmodel.HomePageViewModel;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class HomePageFragment extends Fragment {
     private FragmentHomePageBinding binding;
     private HomePageViewModel viewModel;

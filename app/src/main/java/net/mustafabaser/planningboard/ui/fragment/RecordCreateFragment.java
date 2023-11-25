@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,9 @@ import net.mustafabaser.planningboard.R;
 import net.mustafabaser.planningboard.databinding.FragmentCreateRecordBinding;
 import net.mustafabaser.planningboard.ui.viewmodel.RecordCreateViewModel;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class RecordCreateFragment extends Fragment {
     private FragmentCreateRecordBinding binding;
     private RecordCreateViewModel viewModel;
@@ -25,6 +29,7 @@ public class RecordCreateFragment extends Fragment {
         binding.buttonCreate.setOnClickListener(v->{
             String record_body = binding.editTextRecordBody.getText().toString();
             viewModel.create(record_body);
+            Navigation.findNavController(v).navigate(R.id.record_create_back_to_homepage);
         });
 
         return binding.getRoot();

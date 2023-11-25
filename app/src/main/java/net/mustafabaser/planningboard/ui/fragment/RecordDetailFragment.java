@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,9 @@ import net.mustafabaser.planningboard.data.entity.Records;
 import net.mustafabaser.planningboard.databinding.FragmentRecordDetailBinding;
 import net.mustafabaser.planningboard.ui.viewmodel.RecordDetailViewModel;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class RecordDetailFragment extends Fragment {
     private FragmentRecordDetailBinding binding;
     private RecordDetailViewModel viewModel;
@@ -31,6 +35,7 @@ public class RecordDetailFragment extends Fragment {
         binding.buttonUpdate.setOnClickListener(v->{
             String record_body = binding.editTextRecordBody.getText().toString();
             viewModel.update(retrievedRecord.getRecord_id(), record_body);
+            Navigation.findNavController(v).navigate(R.id.record_detail_back_to_homepage);
         });
 
         return binding.getRoot();
