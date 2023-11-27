@@ -32,6 +32,10 @@ public class RecordCreateFragment extends Fragment {
             Navigation.findNavController(v).navigate(R.id.record_create_back_to_homepage);
         });
 
+        binding.imageViewBackButton.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.record_create_back_to_homepage);
+        });
+
         return binding.getRoot();
     }
 

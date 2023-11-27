@@ -52,8 +52,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordCard
         cardBinding.textViewRecordBody.setText(record.getRecord_body());
 
         cardBinding.imageViewDelete.setOnClickListener(v->{
-                String substr = record.getRecord_body().substring(0,20);
-                Snackbar.make(v, substr + "... will be deleted.", Snackbar.LENGTH_SHORT)
+                Snackbar.make(v, "This task will be deleted, are you sure?", Snackbar.LENGTH_SHORT)
                         .setAction("CONFIRM", v1->{
                             viewModel.remove(record.getRecord_id());
                         }).show();

@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import net.mustafabaser.planningboard.R;
 import net.mustafabaser.planningboard.data.entity.Records;
 import net.mustafabaser.planningboard.databinding.FragmentRecordDetailBinding;
@@ -35,6 +37,10 @@ public class RecordDetailFragment extends Fragment {
         binding.buttonUpdate.setOnClickListener(v->{
             String record_body = binding.editTextRecordBody.getText().toString();
             viewModel.update(retrievedRecord.getRecord_id(), record_body);
+            Navigation.findNavController(v).navigate(R.id.record_detail_back_to_homepage);
+        });
+
+        binding.imageViewBackButtonDetail.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.record_detail_back_to_homepage);
         });
 
