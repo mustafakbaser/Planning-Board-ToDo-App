@@ -37,6 +37,17 @@
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="22dp" />
 
+        <ImageView
+            android:id="@+id/imageViewDeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:src="@drawable/delete"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="20dp"
+            android:layout_marginRight="16dp"/>
+
     </androidx.appcompat.widget.Toolbar>
 
     <com.google.android.material.textfield.TextInputLayout

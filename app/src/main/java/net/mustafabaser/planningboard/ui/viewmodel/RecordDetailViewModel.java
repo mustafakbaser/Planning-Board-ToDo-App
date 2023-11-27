@@ -20,4 +20,8 @@ public class RecordDetailViewModel extends ViewModel {
     public void update(int record_id, String record_body){
         recordsDaoRepository.update(record_id, record_body);
     }
+
+    public void remove(int record_id){
+        recordsDaoRepository.remove(record_id);
+    }
 }
