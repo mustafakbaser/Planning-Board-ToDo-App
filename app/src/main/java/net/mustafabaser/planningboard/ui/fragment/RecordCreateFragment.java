@@ -26,10 +26,19 @@ public class RecordCreateFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentCreateRecordBinding.inflate(inflater, container, false);
 
-        binding.buttonCreate.setOnClickListener(v->{
+        binding.fabCreate.setOnClickListener(v->{
             String record_body = binding.editTextRecordBody.getText().toString();
             viewModel.create(record_body);
             Navigation.findNavController(v).navigate(R.id.record_create_back_to_homepage);
+        });
+
+        binding.editTextRecordBody.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(view.hasFocus()){
+                    binding.editTextRecordBody.setText("");
+                }
+            }
         });
 
         binding.imageViewBackButton.setOnClickListener(v -> {

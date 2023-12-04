@@ -34,7 +34,7 @@ public class RecordDetailFragment extends Fragment {
 
         binding.editTextRecordBody.setText(retrievedRecord.getRecord_body().toString());
 
-        binding.buttonUpdate.setOnClickListener(v->{
+        binding.fabUpdate.setOnClickListener(v->{
             String record_body = binding.editTextRecordBody.getText().toString();
             viewModel.update(retrievedRecord.getRecord_id(), record_body);
             Navigation.findNavController(v).navigate(R.id.record_detail_back_to_homepage);
