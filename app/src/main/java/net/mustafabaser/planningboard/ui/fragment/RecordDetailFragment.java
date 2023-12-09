@@ -45,11 +45,11 @@ public class RecordDetailFragment extends Fragment {
         });
 
         binding.imageViewDeleteButton.setOnClickListener(v->{
-            Snackbar.make(v, "This task will be deleted, are you sure?", Snackbar.LENGTH_SHORT)
-                    .setAction("CONFIRM", v1->{
+            Snackbar.make(v, R.string.delete_task_confirmation, Snackbar.LENGTH_SHORT)
+                    .setAction(R.string.confirm, v1->{
                         viewModel.remove(retrievedRecord.getRecord_id());
                         Navigation.findNavController(v).navigate(R.id.record_detail_back_to_homepage);
-                        Snackbar.make(v, "Task deleted!", Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(v, R.string.task_deleted, Snackbar.LENGTH_SHORT).show();
                     }).show();
         });
 
