@@ -43,6 +43,10 @@ public class RecordDetailFragment extends Fragment {
 
         binding.fabUpdate.setOnClickListener(v->{
             String record_body = binding.editTextRecordBody.getText().toString();
+            if (record_body.trim().isEmpty()) {
+                Snackbar.make(v, R.string.empty_task, Snackbar.LENGTH_SHORT).show();
+                return;
+            }
             viewModel.update(retrievedRecord.getRecord_id(), record_body);
             Navigation.findNavController(v).navigate(R.id.record_detail_back_to_homepage);
         });
