@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import net.mustafabaser.planningboard.R;
 import net.mustafabaser.planningboard.databinding.FragmentCreateRecordBinding;
 import net.mustafabaser.planningboard.ui.viewmodel.RecordCreateViewModel;
@@ -25,6 +27,13 @@ public class RecordCreateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentCreateRecordBinding.inflate(inflater, container, false);
+
+        viewModel.errorMessage.observe(getViewLifecycleOwner(), event -> {
+            Integer messageId = event.getContentIfNotHandled();
+            if (messageId != null) {
+                Snackbar.make(binding.getRoot(), messageId, Snackbar.LENGTH_LONG).show();
+            }
+        });
 
         binding.fabCreate.setOnClickListener(v->{
             String record_body = binding.editTextRecordBody.getText().toString();

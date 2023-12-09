@@ -34,6 +34,13 @@ public class RecordDetailFragment extends Fragment {
 
         binding.editTextRecordBody.setText(retrievedRecord.getRecord_body().toString());
 
+        viewModel.errorMessage.observe(getViewLifecycleOwner(), event -> {
+            Integer messageId = event.getContentIfNotHandled();
+            if (messageId != null) {
+                Snackbar.make(binding.getRoot(), messageId, Snackbar.LENGTH_LONG).show();
+            }
+        });
+
         binding.fabUpdate.setOnClickListener(v->{
             String record_body = binding.editTextRecordBody.getText().toString();
             viewModel.update(retrievedRecord.getRecord_id(), record_body);
