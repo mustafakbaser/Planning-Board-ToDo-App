@@ -53,7 +53,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordCard
         cardBinding.textViewRecordBody.setText(record.getRecord_body());
 
         cardBinding.imageViewDelete.setOnClickListener(v->{
-                Snackbar.make(v, R.string.delete_task_confirmation, Snackbar.LENGTH_SHORT)
+                Snackbar.make(v, R.string.delete_task_confirmation, Snackbar.LENGTH_LONG)
                         .setAction(R.string.confirm, v1->{
                             viewModel.remove(record.getRecord_id());
                         }).show();

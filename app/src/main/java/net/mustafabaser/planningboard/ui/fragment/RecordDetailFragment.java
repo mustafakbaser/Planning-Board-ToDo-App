@@ -56,7 +56,7 @@ public class RecordDetailFragment extends Fragment {
         });
 
         binding.imageViewDeleteButton.setOnClickListener(v->{
-            Snackbar.make(v, R.string.delete_task_confirmation, Snackbar.LENGTH_SHORT)
+            Snackbar.make(v, R.string.delete_task_confirmation, Snackbar.LENGTH_LONG)
                     .setAction(R.string.confirm, v1->{
                         viewModel.remove(retrievedRecord.getRecord_id());
                         Navigation.findNavController(v).navigate(R.id.record_detail_back_to_homepage);
