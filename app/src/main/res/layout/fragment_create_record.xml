@@ -47,6 +47,7 @@
         app:boxStrokeColor="#000000"
         app:boxStrokeWidth="0.0dp"
         app:boxStrokeWidthFocused="0.0dp"
+        app:hintEnabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
-            android:text="@string/type_something" />
+            android:hint="@string/type_something" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
