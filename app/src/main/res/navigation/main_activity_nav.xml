@@ -12,14 +12,10 @@
         tools:layout="@layout/fragment_home_page" >
         <action
             android:id="@+id/homepage_to_record_detail"
-            app:destination="@id/recordDetailFragment"
-            app:popUpTo="@id/homePageFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/recordDetailFragment" />
         <action
             android:id="@+id/homepage_to_create_record"
-            app:destination="@id/recordCreateFragment"
-            app:popUpTo="@id/homePageFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/recordCreateFragment" />
     </fragment>
     <fragment
         android:id="@+id/recordDetailFragment"
@@ -31,7 +27,9 @@
             app:argType="net.mustafabaser.planningboard.data.entity.Records" />
         <action
             android:id="@+id/record_detail_back_to_homepage"
-            app:destination="@id/homePageFragment" />
+            app:destination="@id/homePageFragment"
+            app:popUpTo="@id/homePageFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/recordCreateFragment"
@@ -40,6 +38,8 @@
         tools:layout="@layout/fragment_create_record" >
         <action
             android:id="@+id/record_create_back_to_homepage"
-            app:destination="@id/homePageFragment" />
+            app:destination="@id/homePageFragment"
+            app:popUpTo="@id/homePageFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
