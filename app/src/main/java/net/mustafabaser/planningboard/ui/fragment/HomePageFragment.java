@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import net.mustafabaser.planningboard.R;
 import net.mustafabaser.planningboard.databinding.FragmentHomePageBinding;
 import net.mustafabaser.planningboard.ui.adapter.RecordAdapter;
@@ -35,6 +37,13 @@ public class HomePageFragment extends Fragment {
         viewModel.recordsList.observe(getViewLifecycleOwner(), recordsList -> {
             RecordAdapter adapter = new RecordAdapter(recordsList, requireContext(), viewModel);
             binding.recordsRecyclerView.setAdapter(adapter);
+        });
+
+        viewModel.errorMessage.observe(getViewLifecycleOwner(), event -> {
+            Integer messageId = event.getContentIfNotHandled();
+            if (messageId != null) {
+                Snackbar.make(binding.getRoot(), messageId, Snackbar.LENGTH_LONG).show();
+            }
         });
 
         binding.floatingActionButton.setOnClickListener(v->{

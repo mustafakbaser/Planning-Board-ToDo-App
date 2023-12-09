@@ -7,4 +7,9 @@
     <string name="delete_task_confirmation">Bu görev silinecek, emin misin?</string>
     <string name="confirm">ONAYLA</string>
     <string name="task_deleted">Görev silindi!</string>
+    <string name="error_load_tasks">Görevler yüklenemedi.</string>
+    <string name="error_search_tasks">Görevlerde arama yapılamadı.</string>
+    <string name="error_create_task">Görev kaydedilemedi.</string>
+    <string name="error_update_task">Görev güncellenemedi.</string>
+    <string name="error_delete_task">Görev silinemedi.</string>
 </resources>

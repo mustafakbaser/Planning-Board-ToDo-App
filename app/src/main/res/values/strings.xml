@@ -7,4 +7,9 @@
     <string name="delete_task_confirmation">This task will be deleted, are you sure?</string>
     <string name="confirm">CONFIRM</string>
     <string name="task_deleted">Task deleted!</string>
+    <string name="error_load_tasks">Couldn\'t load tasks.</string>
+    <string name="error_search_tasks">Couldn\'t search tasks.</string>
+    <string name="error_create_task">Couldn\'t save the task.</string>
+    <string name="error_update_task">Couldn\'t update the task.</string>
+    <string name="error_delete_task">Couldn\'t delete the task.</string>
 </resources>
