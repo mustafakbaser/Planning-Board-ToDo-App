@@ -44,6 +44,7 @@ public class RecordsDaoRepository {
                     }
                     @Override
                     public void onComplete() {
+                        loadRecords();
                     }
                     @Override
                     public void onError(Throwable e) {
@@ -113,7 +114,9 @@ public class RecordsDaoRepository {
                     @Override
                     public void onSubscribe(Disposable d) {}
                     @Override
-                    public void onComplete() {}
+                    public void onComplete() {
+                        loadRecords();
+                    }
                     @Override
                     public void onError(Throwable e) {
                         reportError("Could not update record " + record_id, R.string.error_update_task, e);
