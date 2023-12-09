@@ -4,4 +4,7 @@
     <string name="type_something">Yazmaya başla…</string>
     <string name="update">Güncelle</string>
     <string name="save">Kaydet</string>
+    <string name="delete_task_confirmation">Bu görev silinecek, emin misin?</string>
+    <string name="confirm">ONAYLA</string>
+    <string name="task_deleted">Görev silindi!</string>
 </resources>

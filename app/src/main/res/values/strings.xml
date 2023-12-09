@@ -4,4 +4,7 @@
     <string name="type_something">Type something…</string>
     <string name="update">Update</string>
     <string name="save">Save</string>
+    <string name="delete_task_confirmation">This task will be deleted, are you sure?</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="task_deleted">Task deleted!</string>
 </resources>

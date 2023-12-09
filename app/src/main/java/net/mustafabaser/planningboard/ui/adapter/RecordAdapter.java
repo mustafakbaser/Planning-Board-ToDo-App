@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import net.mustafabaser.planningboard.R;
 import net.mustafabaser.planningboard.data.entity.Records;
 import net.mustafabaser.planningboard.databinding.RecordCardDesignBinding;
 import net.mustafabaser.planningboard.ui.fragment.HomePageFragmentDirections;
@@ -52,8 +53,8 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordCard
         cardBinding.textViewRecordBody.setText(record.getRecord_body());
 
         cardBinding.imageViewDelete.setOnClickListener(v->{
-                Snackbar.make(v, "This task will be deleted, are you sure?", Snackbar.LENGTH_SHORT)
-                        .setAction("CONFIRM", v1->{
+                Snackbar.make(v, R.string.delete_task_confirmation, Snackbar.LENGTH_SHORT)
+                        .setAction(R.string.confirm, v1->{
                             viewModel.remove(record.getRecord_id());
                         }).show();
         });
