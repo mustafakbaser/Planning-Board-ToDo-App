@@ -28,8 +28,10 @@ public class AppModule {
     @Provides
     @Singleton
     public RecordsDao provideRecordsDao(@ApplicationContext Context context){
+        // The database file name is unchanged, so existing installs keep their data.
+        // Room creates the schema itself on a fresh install.
         DatabaseRecords db = Room.databaseBuilder(context, DatabaseRecords.class, "records.sqlite")
-                .createFromAsset("records.sqlite").build();
+                .build();
         return db.getRecordsDao();
     }
 }
